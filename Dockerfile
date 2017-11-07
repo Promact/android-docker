@@ -40,7 +40,7 @@ RUN (while sleep 3; do echo "y"; done) | sdkmanager --update && (while sleep 3; 
 ENV ANDROID_COMPONENTS "tools" \
                        "platform-tools" \
                        "build-tools;26.0.2" \
-		                   "build-tools;25.0.3" \
+		       "build-tools;25.0.3" \
                        "build-tools;27.0.0" \
                        "platforms;android-25" \
                        "platforms;android-24"
