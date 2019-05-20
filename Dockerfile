@@ -15,7 +15,7 @@ RUN dpkg --add-architecture i386 && \
 ENV SDK_HOME /usr/local
 
 # Download and unzip Gradle
-ENV GRADLE_VERSION 3.5
+ENV GRADLE_VERSION 5.1.1
 ENV GRADLE_SDK_URL https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 RUN curl -sSL "${GRADLE_SDK_URL}" -o gradle-${GRADLE_VERSION}-bin.zip  \
 	&& unzip gradle-${GRADLE_VERSION}-bin.zip -d ${SDK_HOME}  \
@@ -40,9 +40,11 @@ RUN (while sleep 3; do echo "y"; done) | sdkmanager --update && (while sleep 3; 
 ENV ANDROID_COMPONENTS "tools" \
                        "platform-tools" \
                        "build-tools;26.0.2" \
-		       "build-tools;25.0.3" \
+		               "build-tools;25.0.3" \
                        "build-tools;27.0.0" \
-                       "platforms;android-25" \
+					   "build-tools;28.0.3" \
+                       "platforms;android-28" \
+					   "platforms;android-25" \
                        "platforms;android-24"
 
 ENV GOOGLE_COMPONENTS "extras;android;m2repository" \
